@@ -1,5 +1,6 @@
 models:
   - name: fct_orders
+    description: "This model contains aggregated order information."
     group: finance
     access: public
     latest_version: 1
@@ -8,9 +9,14 @@ models:
         enforced: true
     columns:
       - name: order_id
+        description: "the unique identifer for an order."
         data_type: varchar
         constraints:
           - type: not_null
+          - type: unique
+        tests:
+          - not_null
+          - unique
       - name: location_id
         data_type: varchar
         constraints:
