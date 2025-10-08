@@ -13,6 +13,7 @@ models:
         data_type: varchar
         constraints:
           - type: not_null
+          - type: unique
         tests:
           - not_null
           - unique
